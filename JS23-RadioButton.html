@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>
+            Radio Button Validation
+        </title>
+    </head>
+    <body>
+        <h1>Radio Button Validation</h1>
+        <form action="logi.html" id="radioform" onsubmit="return validationForm()">
+            <input type="radio" name="gender" value="Male">Male<br>
+            <input type="radio" name="gender" value="Female">Female<br>
+            <input type="radio" name="gender" value="Others">Others<br>
+            <input type="submit" value="Submit">
+        </form>
+        <script>
+                function validationForm()
+                {
+                    const radioButtons = document.getElementsByName('gender');
+                    let checkedButton = false;
+                    //Check if any radio button is checked
+                    for(let i=0; i<radioButtons.length; i++)
+                    {
+                        if(radioButtons[i].checked)
+                        {
+                            checkedButton=true;
+                            break;
+                        }
+                    }
+                    //if no radio button is checked
+                    if(!checkedButton)
+                    {
+                        alert("Please select a gender.");
+                        return false;
+                    }
+                    return true;
+                }
+        </script>
+    </body>
+</html>
